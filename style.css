@@ -165,36 +165,32 @@ body {
   }
 
   @media (max-width: 768px) {
+    .corner-image {
+      width: 120px;
+      top: 20px;
+      left: 10px;
+    }
+  
     .corner-image-2 {
-      width: 150px; /* уменьшенное изображение на телефонах */
-      top: auto;
+      width: 120px;
       bottom: 20px;
       right: 10px;
     }
-
-    .corner-image {
-        width: 150px; /* уменьшенное изображение на телефонах */
-        top: auto;
-        bottom: 20px;
-        right: 10px;
-      }
-
+  
     .corner-image-3 {
-        width: 150px; /* уменьшенное изображение на телефонах */
-        top: auto;
-        bottom: 20px;
-        right: 10px;
-      }
-
+      width: 120px;
+      bottom: 20px;
+      left: 10px;
+    }
+  
     .corner-image-4 {
-        width: 150px; /* уменьшенное изображение на телефонах */
-        top: auto;
-        bottom: 20px;
-        right: 10px;
-      }
+      width: 120px;
+      top: 20px;
+      right: 10px;
+    }
   
     .typing-container {
-      font-size: 24px; /* меньший текст на телефоне */
+      font-size: 24px;
     }
   
     .invitation {
