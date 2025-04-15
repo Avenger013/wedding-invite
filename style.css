@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+  }
+  
+  h1 {
+    color: #b85c77;
+  }
+  
+  .names {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .date, .location, .message {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  .rsvp-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #b85c77;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .rsvp-button:hover {
+    background-color: #a44863;
+  }
+  
+  /* Центрирование секции с анимацией */
+  .hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff0f5;
+  }
+  
+  /* Текст печатания */
+  .typing-container {
+    font-size: 32px;
+    font-weight: bold;
+    color: #b85c77;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+  }
+  
+  /* Основной блок */
+  .invitation {
+    background-color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  /* Эффект появления при скролле */
+  .hidden-on-load {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease;
+  }
+  
+  .show-on-scroll {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Фото в левом верхнем углу */
+  .corner-image {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    animation: float 3s ease-in-out infinite;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+
+  /* Фото в левом нижнем углу */
+  .corner-image-3 {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    animation: rotate-sway 3s ease-in-out infinite;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+
+  /* Фото в правом верхнем углу */
+  .corner-image-4 {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    animation: rotate-sway 3s ease-in-out infinite;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+
+   /* Фото в правом нижнем углу */
+   .corner-image-2 {
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    animation: float-left-right 3s ease-in-out infinite;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+  }
+  
+  /* Анимация движения (плавное покачивание вверх-вниз) */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px); /* -10px */
+    }
+  }
+
+  /* Анимация движения (плавное покачивание влево-вправо) */
+  @keyframes float-left-right {
+    0%, 100% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(-10px); /* -10px */
+    }
+  }
+
+  /* Анимация движения (лёгкое вращение (кружение) по часовой и обратно) */
+  @keyframes rotate-sway {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(2deg);
+    }
+    50% {
+      transform: rotate(0deg);
+    }
+    75% {
+      transform: rotate(-2deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  
+
+  
