@@ -163,6 +163,23 @@ body {
       transform: rotate(0deg);
     }
   }
+
+  @media (max-width: 768px) {
+    .corner-image-2 {
+      width: 150px; /* уменьшенное изображение на телефонах */
+      top: auto;
+      bottom: 20px;
+      right: 10px;
+    }
+  
+    .typing-container {
+      font-size: 24px; /* меньший текст на телефоне */
+    }
+  
+    .invitation {
+      padding: 30px 15px;
+    }
+  }
   
   
 
