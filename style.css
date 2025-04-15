@@ -171,6 +171,27 @@ body {
       bottom: 20px;
       right: 10px;
     }
+
+    .corner-image {
+        width: 150px; /* уменьшенное изображение на телефонах */
+        top: auto;
+        bottom: 20px;
+        right: 10px;
+      }
+
+    .corner-image-3 {
+        width: 150px; /* уменьшенное изображение на телефонах */
+        top: auto;
+        bottom: 20px;
+        right: 10px;
+      }
+
+    .corner-image-4 {
+        width: 150px; /* уменьшенное изображение на телефонах */
+        top: auto;
+        bottom: 20px;
+        right: 10px;
+      }
   
     .typing-container {
       font-size: 24px; /* меньший текст на телефоне */
