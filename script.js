@@ -2,7 +2,7 @@ document.querySelector('.rsvp-button').addEventListener('click', function() {
     alert('Спасибо! Мы с вами свяжемся 💌');
   });
   
-const text = "Владимир + Марина = ❤️";
+const text = "ВЛАДИМИР + МАРИНА = ❤️";
 const typedText = document.querySelector(".typed-text");
 
 let index = 0;

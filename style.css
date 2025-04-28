@@ -2,7 +2,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: #ffffff url('texture.jpg') no-repeat;
+  /* background: #cdffd9 url('texture.jpg') no-repeat; */
+  background: #ddffe5 url('texture.jpg') no-repeat;
   background-size: cover;
   background-blend-mode: multiply;
   background-attachment: fixed;
@@ -74,6 +75,7 @@ body {
     color: #000000;
     text-align: center;
     font-family: 'Courier New', monospace;
+    /* font-family: Comic Sans MS, Comic Sans, cursive; */
   }
   
   /* Основной блок */
@@ -104,37 +106,10 @@ body {
     width: 350px;
     height: auto;
     border-radius: 10px;
-    /* animation: rotate-sway 2.5s ease-in-out infinite; */
     animation: rotate-sway 2.5s infinite alternate ease-in-out;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 10;
   }
-
-  /* Фото в левом нижнем углу */
-  /* .corner-image-3 {
-    position: absolute;
-    bottom: 60px;
-    left: 60px;
-    width: 350px;
-    height: auto;
-    border-radius: 10px;
-    animation: rotate-sway 3s ease-in-out infinite;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-  } */
-
-  /* Фото в правом верхнем углу */
-  /* .corner-image-4 {
-    position: absolute;
-    top: 60px;
-    right: 60px;
-    width: 350px;
-    height: auto;
-    border-radius: 10px;
-    animation: rotate-sway 3s ease-in-out infinite;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-  } */
 
    /* Фото в правом нижнем углу */
    .corner-image-2 {
@@ -144,46 +119,19 @@ body {
     width: 350px;
     height: auto;
     border-radius: 10px;
-    /* animation: rotate-sway 3s ease-in-out infinite; */
     animation: rotate-sway 2.5s infinite alternate ease-in-out;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 10;
   }
-  
-  /* Анимация движения (плавное покачивание вверх-вниз) */
-  /* @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  } */
-
-  /* Анимация движения (плавное покачивание влево-вправо) */
-  /* @keyframes float-left-right {
-    0%, 100% {
-      transform: translateX(0px);
-    }
-    50% {
-      transform: translateX(-10px);
-    }
-  } */
 
   /* Анимация движения (лёгкое вращение (кружение) по часовой и обратно) */
   @keyframes rotate-sway {
     0% {
       transform: rotate(0deg);
     }
-    /* 25% {
-      transform: rotate(2deg);
-    } */
     50% {
       transform: rotate(2deg);
     }
-    /* 75% {
-      transform: rotate(-2deg);
-    } */
     100% {
       transform: rotate(-2deg);
     }
@@ -192,13 +140,13 @@ body {
   @media (max-width: 768px) {
     .corner-image {
       width: 200px;
-      top: 200px;
+      top: 150px;
       left: 50px;
     }
   
     .corner-image-2 {
       width: 200px;
-      bottom: 100px;
+      bottom: 35px;
       right: 50px;
     }
 
@@ -352,3 +300,17 @@ body {
     animation: pulse 2s infinite;
   }
   
+  .typed-text::after {
+    content: '|'; /* сама палочка */
+    animation: blink 0.7s infinite;
+    margin-left: 2px; /* небольшой отступ от текста */
+  }
+  
+  @keyframes blink {
+    0%, 50% {
+      opacity: 1;
+    }
+    51%, 100% {
+      opacity: 0;
+    }
+  }
