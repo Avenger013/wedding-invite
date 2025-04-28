@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Свадебное приглашение</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="calendar.css" />
 </head>
 
 <body>
@@ -12,25 +15,179 @@
     <section class="hero-section">
       <img src="photo.jpg" alt="Фото" class="corner-image" />
       <img src="photo2.jpg" alt="Фото" class="corner-image-2" />
-      <img src="photo3.jpg" alt="Фото" class="corner-image-3" />
-      <img src="photo4.jpg" alt="Фото" class="corner-image-4" />
       <div class="typing-container">
         <span class="typed-text"></span>
       </div>
     </section>
   
     <!-- Основной контент -->
-    <section class="invitation hidden-on-load">
-      <h1>Вы приглашены на свадьбу!</h1>
-      <p class="names">Паша & Оля</p>
-      <p class="date">15 июня 2025</p>
-      <p class="location">Ресторан "Ромашка", г. Москва</p>
-      <p class="message">
-        Мы будем рады видеть вас на нашем торжестве!<br />
-        Начало в 16:00.
-      </p>
-      <a class="rsvp-button" href="https://t.me/telegram">Подтвердить участие</a>
-    </section>
+<section class="invitation hidden-on-load">
+  <h1>Дорогие гости!</h1>
+
+  <div class="music-toggle">
+    <audio id="music1" loop>
+      <source src="music1.mp3" type="audio/mpeg">
+      Ваш браузер не поддерживает аудиоэлемент.
+    </audio>
+    <img src="music1-off.png" alt="Музыка 1" id="music1-icon" />
+  </div>
+  
+  <div class="music-toggle">
+    <audio id="music2" loop>
+      <source src="music2.mp3" type="audio/mpeg">
+      Ваш браузер не поддерживает аудиоэлемент.
+    </audio>
+    <img src="music2-off.png" alt="Музыка 2" id="music2-icon" />
+  </div>
+
+  <p class="message">
+    Узнаете этих детишек? Да-да, это мы! Время пролетело очень быстро, представляете? <br><br>
+    Один день в этом году станет для нас особенным, и мы хотим провести его в кругу близких и друзей. С большим удовольствием приглашаем Вас на праздник создания нашей семьи!
+  </p>
+</section>
+
+<section class="calendar_on">
+  <div class="calendar">
+    <div class="calendar-header">
+      <div class="year">2025</div>
+      <div class="month">Июль</div>
+    </div>
+    <div class="calendar-body">
+      <div class="weekdays">
+        <div>ПН</div>
+        <div>ВТ</div>
+        <div>СР</div>
+        <div>ЧТ</div>
+        <div>ПТ</div>
+        <div>СБ</div>
+        <div>ВС</div>
+      </div>
+      <div class="days">
+        <div class="empty"></div> <!-- пустой для выравнивания -->
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+        <div>11</div>
+        <div>12</div>
+        <div>13</div>
+        <div>14</div>
+        <div>15</div>
+        <div>16</div>
+        <div>17</div>
+        <div>18</div>
+        <div>19</div>
+        <div>20</div>
+        <div>21</div>
+        <div>22</div>
+        <div>23</div>
+        <div>24</div>
+        <div>25</div>
+        <div>26</div>
+        <div>27</div>
+        <div>28</div>
+        <div>29</div>
+        <div>30</div>
+        <div>31</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="location_on">
+  <div class="location">
+    <h2>Место проведения</h2>
+    <p>Роспись: <a href="https://yandex.ru/maps/?text=улица Красный проспект, 66" target="_blank">улица Красный проспект, 66</a></p>
+    <p>Торжество: <a href="https://yandex.ru/maps/?text=улица Ипподромская, 15" target="_blank">улица Ипподромская, 15, Белый зал Лофт Place</a></p>
+  </div>
+</section>
+
+  <section class="program_on">
+    <h1>Программа дня</h1>
+  
+    <div class="event">
+      <h2>15:30 - Роспись</h2>
+      <p>Собираясь на торжество, возьмите с собой улыбки и хорошее настроение.</p>
+    </div>
+  
+    <div class="event">
+      <h2>17:00 - Банкет</h2>
+      <p>Время вкусной еды, танцев и развлечений.</p>
+    </div>
+  
+    <div class="event">
+      <h2>23:00 - Завершение вечера</h2>
+      <p>К сожалению, даже такой волшебный вечер может закончиться.</p>
+    </div>
+  </section>
+  
+
+<section class="rsvp-form_on">
+  <div class="rsvp-form">
+    <h2>Анкета</h2>
+    <p>Просим подтвердить свое присутствие до 01.06.2025</p>
+    <form>
+      <input type="text" placeholder="Имя и Фамилия" required />
+      
+      <p>Сможете ли присутствовать на нашем торжестве?</p>
+      <label><input type="radio" name="attendance" value="yes"> Я приеду/Мы приедем</label><br>
+      <label><input type="radio" name="attendance" value="later"> Скажу ответ позже</label><br>
+      <label><input type="radio" name="attendance" value="no"> Приехать не получится</label>
+
+      <p>Предпочтения по напиткам:</p>
+      <label><input type="checkbox" name="drinks" value="vodka"> Водка</label><br>
+      <label><input type="checkbox" name="drinks" value="whisky"> Виски</label><br>
+      <label><input type="checkbox" name="drinks" value="white_wine"> Белое вино</label><br>
+      <label><input type="checkbox" name="drinks" value="red_wine"> Красное вино</label><br>
+      <label><input type="checkbox" name="drinks" value="moonshine"> Самогон</label><br>
+      <label><input type="checkbox" name="drinks" value="no_alcohol"> Не пью алкоголь</label><br>
+
+      <button type="submit" class="rsvp-button">Отправить</button>
+    </form>
+  </div>
+</section>
+
+<section class="details_on">
+  <div class="details">
+    <h2>Детали</h2>
+    <p>Приятным комплиментом для нас будет, если вместо цветов Вы решите подарить нам бутылочку вина для нашей семейной винотеки.</p>
+    <p>Для вашего удобства будет организован трансфер от ЗАГСа до места проведения свадьбы.</p>
+  </div>
+</section>
+
+<section class="countdown-section">
+  <h1>Ждем вас через...</h1>
+
+  <div class="countdown" id="countdown">
+    <div class="countdown-item">
+      <span id="days">0</span>
+      дней
+    </div>
+    <div class="countdown-item">
+      <span id="hours">0</span>
+      часов
+    </div>
+    <div class="countdown-item">
+      <span id="minutes">0</span>
+      минут
+    </div>
+    <div class="countdown-item">
+      <span id="seconds">0</span>
+      секунд
+    </div>
+  </div>
+
+  <div class="heart">♡</div>
+
+  <div class="with-love">С любовью,<br>Владимир и Марина</div>
+</section>
 
   <script src="script.js"></script>
 </body>
