@@ -1,7 +1,3 @@
-document.querySelector('.rsvp-button').addEventListener('click', function() {
-    alert('Спасибо! Мы с вами свяжемся 💌');
-  });
-  
 const text = "ВЛАДИМИР + МАРИНА = ❤️";
 const typedText = document.querySelector(".typed-text");
 
@@ -17,7 +13,7 @@ function typeEffect() {
       isDeleting = true;
       setTimeout(typeEffect, 1200); // пауза перед удалением
     } else {
-      setTimeout(typeEffect, 150);
+      setTimeout(typeEffect, 120);
     }
   } else {
     typedText.textContent = text.substring(0, index - 1);
@@ -25,7 +21,7 @@ function typeEffect() {
 
     if (index === 0) {
       isDeleting = false;
-      setTimeout(typeEffect, 500); // пауза перед новым вводом
+      setTimeout(typeEffect, 3000); // пауза перед новым вводом
     } else {
       setTimeout(typeEffect, 100);
     }
@@ -73,32 +69,137 @@ const countdown = () => {
 
 setInterval(countdown, 1000);
 
-const music1 = document.getElementById('music1');
-const music1Icon = document.getElementById('music1-icon');
-let isPlaying1 = false;
+document.addEventListener("DOMContentLoaded", () => {
+  typeEffect(); // уже есть
 
-const music2 = document.getElementById('music2');
-const music2Icon = document.getElementById('music2-icon');
-let isPlaying2 = false;
+  // МУЗЫКА
+  const music1 = document.getElementById('music1');
+  const music1Icon = document.getElementById('music1-icon');
+  let isPlaying1 = false;
 
-music1Icon.addEventListener('click', () => {
-  if (isPlaying1) {
-    music1.pause();
-    music1Icon.src = 'music1-off.png';
-  } else {
-    music1.play();
-    music1Icon.src = 'music1-on.png';
-  }
-  isPlaying1 = !isPlaying1;
+  const music2 = document.getElementById('music2');
+  const music2Icon = document.getElementById('music2-icon');
+  let isPlaying2 = false;
+
+  music1Icon.addEventListener('click', () => {
+    if (isPlaying1) {
+      music1.pause();
+      music1Icon.src = 'music1-off.png';
+    } else {
+      music1.play();
+      music1Icon.src = 'music1-on.png';
+    }
+    isPlaying1 = !isPlaying1;
+  });
+
+  music2Icon.addEventListener('click', () => {
+    if (isPlaying2) {
+      music2.pause();
+      music2Icon.src = 'music2-off.png';
+    } else {
+      music2.play();
+      music2Icon.src = 'music2-on.png';
+    }
+    isPlaying2 = !isPlaying2;
+  });
 });
 
-music2Icon.addEventListener('click', () => {
-  if (isPlaying2) {
-    music2.pause();
-    music2Icon.src = 'music2-off.png';
-  } else {
-    music2.play();
-    music2Icon.src = 'music2-on.png';
+document.getElementById('rsvp-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const nameFields = form.querySelectorAll('.name-field');
+  const errorMsg = form.querySelector('.error-msg');
+  const errorMsg2 = form.querySelector('.error-msg2');
+  const drinkCheckboxes = form.querySelectorAll('input[name="drinks"]');
+
+  let atLeastOneNameFilled = false;
+
+  // Сброс ошибок
+  errorMsg.style.display = 'none';
+  errorMsg2.style.display = 'none';
+  nameFields.forEach(f => f.classList.remove('error'));
+  drinkCheckboxes.forEach(cb => cb.classList.remove('error'));
+
+  nameFields.forEach(field => {
+    if (field.value.trim()) {
+      atLeastOneNameFilled = true;
+    }
+  });
+
+  if (!atLeastOneNameFilled) {
+    errorMsg.textContent = "Заполните хотя бы одно поле выше";
+    errorMsg.style.display = 'block';
+    nameFields.forEach(f => f.classList.add('error'));
+    return;
   }
-  isPlaying2 = !isPlaying2;
+
+  const selectedDrinks = [...form.querySelectorAll('input[name="drinks"]:checked')];
+  if (selectedDrinks.length === 0) {
+    errorMsg2.style.display = 'block';
+    drinkCheckboxes.forEach(cb => cb.classList.add('error'));
+    return;
+  }
+
+  const attendanceMap = {
+    yes: "Я приеду / Мы приедем",
+    later: "Скажу ответ позже",
+    no: "Приехать не получится"
+  };
+  const drinksMap = {
+    vodka: "Водка",
+    whisky: "Виски",
+    white_wine: "Белое вино",
+    red_wine: "Красное вино",
+    moonshine: "Самогон",
+    no_alcohol: "Не пью алкоголь"
+  };
+
+  const data = {
+    name1: nameFields[0].value.trim(),
+    name2: nameFields[1].value.trim(),
+    name3: nameFields[2].value.trim(),
+    attendance: attendanceMap[form.attendance.value],
+    drinks: selectedDrinks.map(el => drinksMap[el.value])
+  };
+
+  fetch('/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+    .then(res => res.text())
+    .then(text => alert(text === "OK" ? "Спасибо!" : "Ошибка"))
+    .catch(err => {
+      console.error(err);
+      alert("Ошибка при отправке");
+    });
 });
+
+// Убрать ошибку при вводе имени
+document.querySelectorAll('.name-field').forEach(field => {
+  field.addEventListener('input', () => {
+    const nameFields = document.querySelectorAll('.name-field');
+    const errorMsg = document.querySelector('.error-msg');
+
+    const atLeastOneFilled = Array.from(nameFields).some(f => f.value.trim());
+
+    if (atLeastOneFilled) {
+      errorMsg.style.display = 'none';
+      nameFields.forEach(f => f.classList.remove('error'));
+    }
+  });
+});
+
+
+// Убрать ошибку при выборе напитков
+document.querySelectorAll('input[name="drinks"]').forEach(cb => {
+  cb.addEventListener('change', () => {
+    document.querySelector('.error-msg2').style.display = 'none';
+    document.querySelectorAll('input[name="drinks"]').forEach(c => c.classList.remove('error'));
+  });
+});
+
+
+
+

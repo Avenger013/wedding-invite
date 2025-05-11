@@ -3,6 +3,8 @@
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
+    margin-top: 0 !important;
+    padding-top: 10px !important;
   }
   
   .program_on h1 {
@@ -26,8 +28,10 @@
   
   .program_on p {
     font-family: Arial, sans-serif;
-    font-size: 16px;
-    color: #555;
+    font-size: 17px;
+    color: #333;
     margin: 0;
   }
+
+
   
