@@ -4,6 +4,18 @@
     padding: 20px;
     border-radius: 12px;
   }
+
+.rsvp-form_on {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.rsvp-form_on.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
   
   .rsvp-form form {
     display: flex;

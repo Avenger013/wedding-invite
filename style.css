@@ -194,6 +194,14 @@ body {
     font-family: 'Great Vibes', cursive;
     color: #000;
     position: relative;
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .countdown-section.visible {
+  opacity: 1;
+  transform: translateY(0);
   }
   
   .countdown-section h1 {
@@ -329,7 +337,18 @@ body {
     background-color: transparent;
     border-radius: 12px;
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
-}
+  }
+
+  .details_on {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .details_on.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   .music-toggle {
   display: flex;
@@ -408,6 +427,14 @@ body {
   margin: 0 auto;
   text-align: center;
   position: relative;
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.location_on.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .location-container {
@@ -525,6 +552,16 @@ input[type="checkbox"].error {
   accent-color: red;
 }
 
+.fade-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: all 0.8s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 

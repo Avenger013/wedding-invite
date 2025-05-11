@@ -200,6 +200,28 @@ document.querySelectorAll('input[name="drinks"]').forEach(cb => {
   });
 });
 
+function revealOnScroll() {
+  const elements = document.querySelectorAll(
+    '.calendar_on, .location_on, .program_on, .rsvp-form_on, .details_on, .countdown-section'
+  );
+
+  elements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top < windowHeight - 100) {
+      el.classList.add('visible');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+
+
+
+
+
 
 
 

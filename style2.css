@@ -5,6 +5,14 @@
     text-align: center;
     margin-top: 0 !important;
     padding-top: 10px !important;
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .program_on.visible {
+  opacity: 1;
+  transform: translateY(0);
   }
   
   .program_on h1 {
