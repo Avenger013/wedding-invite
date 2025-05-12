@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Свадебное приглашение</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="style2.css" />
   <link rel="stylesheet" href="style3.css" />
@@ -36,7 +37,7 @@
       </div>
     
       <p class="message">
-        Узнаете этих детишек? Да-да, это мы! Время пролетело очень быстро, представляете? <br><br>
+        Узнаете этих детишек? <br>Да-да, это мы! Время пролетело очень быстро, представляете? <br><br>
         Один день в этом году станет для нас особенным, и мы хотим провести его в кругу близких и друзей.
         С большим удовольствием приглашаем Вас на праздник создания нашей семьи!
       </p>
@@ -56,12 +57,12 @@
         
           <!-- Пустые для выравнивания до вторника (1 июля — ВТ) -->
           <div></div> <!-- ПН -->
-          <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div>
-          <!-- <div class="heart-day"><span>7</span></div> -->
+          <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+          <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
           <div class="dog-day">
-            <span>7</span>
-          </div>          
-          <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div>
+            <span>11</span>
+          </div>    
+          <div>12</div><div>13</div>
           <div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div>
           <div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div><div>27</div>
           <div>28</div><div>29</div><div>30</div><div>31</div>
@@ -77,7 +78,7 @@
 <section class="location_on">
   <div class="location">
     <h2>Место проведения</h2>
-    <p>Роспись: <a href="https://yandex.ru/maps/?text=улица Красный проспект, 66" target="_blank">г Новосибирск, улица Красный проспект, 66</a></p>
+    <p>Роспись: <a href="https://yandex.ru/maps/?text=улица Красный проспект, 68" target="_blank">г Новосибирск, улица Красный проспект, 68</a></p>
     <p>Торжество: <a href="https://yandex.ru/maps/?text=улица Ипподромская, 15" target="_blank">г Новосибирск, улица Ипподромская, 15, Белый зал Лофт Place</a></p>
   </div>
 
@@ -114,6 +115,30 @@
   </div>
   </section>
 
+<section class="details_on fade-up">
+  <div class="program-container">
+    <h1>Второй день</h1>
+
+    <div class="event">
+      <p>Мы уверены, что первый день нашей свадьбы будет наполнен радостью, теплом и незабываемыми моментами, и хотели бы продолжить наш праздник вместе с вами!</p>
+    </div>
+
+    <div class="event">
+      <p>Будем рады видеть вас на втором дне свадьбы, который пройдет в уютной атмосфере загородного коттеджа.</p>
+    </div>
+
+    <div class="event">
+      <p>Мы будем отдыхать, общаться и наслаждаться временем в кругу дорогих людей!</p>
+      <p class="subtext">(количество спальных мест ограничено, подробная информация - у молодоженов)</p>
+    </div>
+
+    <svg class="wave-line-bottom4" viewBox="0 0 500 100" preserveAspectRatio="none">
+      <path d="M0,50 C150,0 350,100 500,40" fill="none" stroke="black" stroke-width="2"/>
+    </svg>
+  </div>
+</section>
+
+
 <section class="rsvp-form_on">
     <div class="rsvp-form">
       <h2>Анкета</h2>
@@ -145,6 +170,14 @@
           <label><input type="checkbox" name="drinks" value="red_wine"> Красное вино</label><br>
           <label><input type="checkbox" name="drinks" value="moonshine"> Самогон</label><br>
           <label><input type="checkbox" name="drinks" value="no_alcohol"> Не пью алкоголь</label><br>
+        </div>
+
+        <p class="question">Останетесь отмечать с нами во второй день?</p>
+        <p class="subtext">(возможно отметить только один вариант)</p>
+        <div class="error-msg3" style="display: none;">Выберите один из вариантов ниже</div>
+        <div class="form-group attendance2-group">
+          <label><input type="radio" name="attendance2" value="yes1" required> Да</label><br>
+          <label><input type="radio" name="attendance2" value="no1"> Нет</label>
         </div>
 
         <button type="submit" class="rsvp-button">Отправить</button>

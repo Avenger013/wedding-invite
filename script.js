@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const countdown = () => {
-  const countDate = new Date('July 7, 2025 00:00:00').getTime();
+  const countDate = new Date('July 11, 2025 00:00:00').getTime();
   const now = new Date().getTime();
   const gap = countDate - now;
 
@@ -70,7 +70,7 @@ const countdown = () => {
 setInterval(countdown, 1000);
 
 document.addEventListener("DOMContentLoaded", () => {
-  typeEffect(); // уже есть
+  typeEffect();
 
   // МУЗЫКА
   const music1 = document.getElementById('music1');
@@ -111,6 +111,7 @@ document.getElementById('rsvp-form').addEventListener('submit', function (e) {
   const nameFields = form.querySelectorAll('.name-field');
   const errorMsg = form.querySelector('.error-msg');
   const errorMsg2 = form.querySelector('.error-msg2');
+  const attendance2Error = form.querySelector('.error-msg3');
   const drinkCheckboxes = form.querySelectorAll('input[name="drinks"]');
 
   let atLeastOneNameFilled = false;
@@ -141,6 +142,15 @@ document.getElementById('rsvp-form').addEventListener('submit', function (e) {
     return;
   }
 
+  const attendance2Group = form.querySelector('.attendance2-group');
+  if (!form.attendance2.value) {
+    attendance2Error.style.display = 'block';
+    attendance2Group.classList.add('error');
+  return;
+  }
+  attendance2Error.style.display = 'none';
+  attendance2Group.classList.remove('error');
+
   const attendanceMap = {
     yes: "Я приеду / Мы приедем",
     later: "Скажу ответ позже",
@@ -160,7 +170,8 @@ document.getElementById('rsvp-form').addEventListener('submit', function (e) {
     name2: nameFields[1].value.trim(),
     name3: nameFields[2].value.trim(),
     attendance: attendanceMap[form.attendance.value],
-    drinks: selectedDrinks.map(el => drinksMap[el.value])
+    drinks: selectedDrinks.map(el => drinksMap[el.value]),
+    attendance2: form.attendance2.value === 'yes1' ? 'Да' : 'Нет',
   };
 
   fetch('/submit', {
@@ -177,19 +188,24 @@ document.getElementById('rsvp-form').addEventListener('submit', function (e) {
 });
 
 // Убрать ошибку при вводе имени
-document.querySelectorAll('.name-field').forEach(field => {
-  field.addEventListener('input', () => {
-    const nameFields = document.querySelectorAll('.name-field');
-    const errorMsg = document.querySelector('.error-msg');
+const nameFields = document.querySelectorAll('.name-field');
+const errorMsg = document.querySelector('.error-msg');
 
+nameFields.forEach(field => {
+  field.addEventListener('input', () => {
     const atLeastOneFilled = Array.from(nameFields).some(f => f.value.trim());
 
     if (atLeastOneFilled) {
       errorMsg.style.display = 'none';
       nameFields.forEach(f => f.classList.remove('error'));
+    } else {
+      // Показываем снова, если все очистили
+      errorMsg.style.display = 'block';
+      nameFields.forEach(f => f.classList.add('error'));
     }
   });
 });
+
 
 
 // Убрать ошибку при выборе напитков
@@ -200,9 +216,19 @@ document.querySelectorAll('input[name="drinks"]').forEach(cb => {
   });
 });
 
+document.querySelectorAll('input[name="attendance2"]').forEach(rb => {
+  rb.addEventListener('change', () => {
+    const group = document.querySelector('.attendance2-group');
+    const error = document.querySelector('.error-msg3');
+    group.classList.remove('error');
+    error.style.display = 'none';
+  });
+});
+
+
 function revealOnScroll() {
   const elements = document.querySelectorAll(
-    '.calendar_on, .location_on, .program_on, .rsvp-form_on, .details_on, .countdown-section'
+    '.calendar_on, .location_on, .program_on, .rsvp-form_on, .details_on, .countdown-section, .details_on fade-up'
   );
 
   elements.forEach(el => {

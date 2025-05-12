@@ -142,4 +142,56 @@
   max-width: 400px;
 }
 
+.attendance2-group.error input[type="radio"] {
+  accent-color: red;
+}
+
+.form-group attendance2-group {
+  text-align: left;
+  max-width: 400px;
+  margin: 0 auto 24px;
+}
+
+.form-group attendance2-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+  font-size: 16px;
+}
+
+.form-group attendance2-group input[type="radio"] {
+  width: 22px;
+  height: 22px;
+  accent-color: #555;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+input:focus:invalid {
+  box-shadow: none;
+  outline: none;
+  border: 2px solid #000;
+}
+
+/* Когда есть класс error — красная рамка */
+.name-field.error {
+  border: 2px solid red !important;
+  outline: none;
+}
+
+input:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  border: 1px solid #000 !important;
+}
+
+input[type="radio"]:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
 
